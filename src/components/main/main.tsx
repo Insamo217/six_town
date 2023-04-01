@@ -1,13 +1,13 @@
 import React from "react";
-import PlaceCard from "../placeCard/placeCard";
+import PlaceCard from "../place-card/place-card";
 
 function Main({ countPlaces }: { countPlaces: number }): JSX.Element {
   enum RatingStars {
-    one = "20%",
-    two = "40%",
-    three = "60%",
-    four = "80%",
-    five = "100%",
+    One = "20%",
+    Two = "40%",
+    Three = "60%",
+    Four = "80%",
+    Five = "100%",
   }
 
   return (
@@ -131,7 +131,7 @@ function Main({ countPlaces }: { countPlaces: number }): JSX.Element {
                       imgSrc="img/apartment-01.jpg"
                       typeRoom="Apartment"
                       premium={true}
-                      ratingStars={RatingStars.four}
+                      ratingStars={RatingStars.Four}
                       bookmark={true}
                     />
                   ))}

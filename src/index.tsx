@@ -6,10 +6,10 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-const COUNTPLACES = 6;
+const COUNT_PLACES = 6;
 
 root.render(
   <React.StrictMode>
-    <App countPlaces={COUNTPLACES} />
+    <App countPlaces={COUNT_PLACES} />
   </React.StrictMode>
 );
