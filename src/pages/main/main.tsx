@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PlaceCard from "../../components/place-card/place-card";
 
 function Main({ countPlaces }: { countPlaces: number }): JSX.Element {
