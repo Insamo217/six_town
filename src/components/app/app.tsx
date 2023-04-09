@@ -6,6 +6,7 @@ import Favorites from "../../pages/favorites/favorites";
 import Property from "../../pages/property/property";
 import NotFound from "../../pages/not-found/not-found";
 import PrivateRoute from "../private-route/private-route";
+import { AuthorizationStatus } from "../private-route/private-route";
 
 function App({ countPlaces }: { countPlaces: number }): JSX.Element {
   return (
@@ -17,7 +18,7 @@ function App({ countPlaces }: { countPlaces: number }): JSX.Element {
           <Route
             path="favorites"
             element={
-              <PrivateRoute>
+              <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
                 <Favorites />
               </PrivateRoute>
             }
