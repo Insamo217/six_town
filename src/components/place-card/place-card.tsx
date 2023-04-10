@@ -1,14 +1,5 @@
 import React from "react";
-
-type PlaceInfo = {
-  title: string;
-  price: number;
-  imgSrc: string;
-  typeRoom: string;
-  premium: boolean;
-  ratingStars: string;
-  bookmark: boolean;
-};
+import { PlaceInfo } from "../../types/const";
 
 function PlaceCard({
   price,

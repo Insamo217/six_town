@@ -1,16 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PlaceCard from "../../components/place-card/place-card";
+import { RatingStars } from "../../types/const";
 
 function Main({ countPlaces }: { countPlaces: number }): JSX.Element {
-  enum RatingStars {
-    One = "20%",
-    Two = "40%",
-    Three = "60%",
-    Four = "80%",
-    Five = "100%",
-  }
-
   return (
     <>
       <div className="page page--gray page--main">
