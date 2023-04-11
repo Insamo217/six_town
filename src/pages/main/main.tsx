@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import PlaceCard from "../../components/place-card/place-card";
-import { RatingStars } from "../../types/const";
 
-function Main({ countPlaces }: { countPlaces: number }): JSX.Element {
+import { appTypes } from "../../types/types";
+
+function Main({ countPlaces, offers }: appTypes): JSX.Element {
   return (
     <>
       <div className="page page--gray page--main">
@@ -117,18 +117,20 @@ function Main({ countPlaces }: { countPlaces: number }): JSX.Element {
                   </ul>
                 </form>
                 <div className="cities__places-list places__list tabs__content">
-                  {Array.from({ length: countPlaces }, (i: number) => (
-                    <PlaceCard
-                      key={i + 1}
-                      title="Beautiful &amp; luxurious apartment at great location"
-                      price={120}
-                      imgSrc="img/apartment-01.jpg"
-                      typeRoom="Apartment"
-                      premium={true}
-                      ratingStars={RatingStars.Four}
-                      bookmark={true}
-                    />
-                  ))}
+                  {offers.map((offer, id) => {
+                    return (
+                      <PlaceCard
+                        key={id + 1}
+                        title={offer.title}
+                        price={offer.price}
+                        imgSrc={offer.imgSrc}
+                        typeRoom={offer.typeRoom}
+                        premium={offer.premium}
+                        ratingStars={offer.ratingStars}
+                        bookmark={offer.bookmark}
+                      />
+                    );
+                  })}
                 </div>
               </section>
               <div className="cities__right-section">

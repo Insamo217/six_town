@@ -7,13 +7,17 @@ import Property from "../../pages/property/property";
 import NotFound from "../../pages/not-found/not-found";
 import PrivateRoute from "../private-route/private-route";
 import { AuthorizationStatus } from "../private-route/private-route";
+import { appTypes } from "../../types/types";
 
-function App({ countPlaces }: { countPlaces: number }): JSX.Element {
+function App({ countPlaces, offers }: appTypes): JSX.Element {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Main countPlaces={countPlaces} />}></Route>
+          <Route
+            path="/"
+            element={<Main countPlaces={countPlaces} offers={offers} />}
+          ></Route>
           <Route path="login" element={<Login />}></Route>
           <Route
             path="favorites"

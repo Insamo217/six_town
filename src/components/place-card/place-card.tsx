@@ -1,5 +1,5 @@
 import React from "react";
-import { PlaceInfo } from "../../types/const";
+import { PlaceInfo } from "../../types/types";
 
 function PlaceCard({
   price,

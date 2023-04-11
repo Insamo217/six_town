@@ -1,3 +1,5 @@
+export type appTypes = { countPlaces: number; offers: PlaceInfo[] };
+
 export type PlaceInfo = {
   title: string;
   price: number;
