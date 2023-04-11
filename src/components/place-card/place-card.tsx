@@ -2,6 +2,7 @@ import React from "react";
 import { PlaceInfo } from "../../types/types";
 
 function PlaceCard({
+  id,
   price,
   title,
   imgSrc,
@@ -18,7 +19,6 @@ function PlaceCard({
             <span>Premium</span>
           </div>
         )}
-
         <div className="cities__image-wrapper place-card__image-wrapper">
           <a href="#">
             <img

@@ -1,5 +1,5 @@
 import React from "react";
-import PlaceCard from "../../components/place-card/place-card";
+import OffersList from "../../components/offers-list/offers-list";
 
 import { appTypes } from "../../types/types";
 
@@ -117,20 +117,7 @@ function Main({ countPlaces, offers }: appTypes): JSX.Element {
                   </ul>
                 </form>
                 <div className="cities__places-list places__list tabs__content">
-                  {offers.map((offer, id) => {
-                    return (
-                      <PlaceCard
-                        key={id + 1}
-                        title={offer.title}
-                        price={offer.price}
-                        imgSrc={offer.imgSrc}
-                        typeRoom={offer.typeRoom}
-                        premium={offer.premium}
-                        ratingStars={offer.ratingStars}
-                        bookmark={offer.bookmark}
-                      />
-                    );
-                  })}
+                  <OffersList countPlaces={countPlaces} offers={offers} />
                 </div>
               </section>
               <div className="cities__right-section">

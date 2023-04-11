@@ -3,6 +3,7 @@ import { RatingStars } from "../../types/types";
 
 export const offers: PlaceInfo[] = [
   {
+    id: 1,
     title: "Name №1",
     price: 120,
     imgSrc: "img/apartment-01.jpg",
@@ -12,6 +13,7 @@ export const offers: PlaceInfo[] = [
     bookmark: false,
   },
   {
+    id: 2,
     title: "Name №2",
     price: 90,
     imgSrc: "img/apartment-02.jpg",
@@ -21,6 +23,7 @@ export const offers: PlaceInfo[] = [
     bookmark: false,
   },
   {
+    id: 3,
     title: "Name №3",
     price: 437,
     imgSrc: "img/apartment-03.jpg",
@@ -30,6 +33,7 @@ export const offers: PlaceInfo[] = [
     bookmark: true,
   },
   {
+    id: 4,
     title: "Name №4",
     price: 60,
     imgSrc: "img/room.jpg",
@@ -39,6 +43,7 @@ export const offers: PlaceInfo[] = [
     bookmark: true,
   },
   {
+    id: 5,
     title: "Name №5",
     price: 80,
     imgSrc: "img/room.jpg",

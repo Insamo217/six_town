@@ -1,6 +1,7 @@
 export type appTypes = { countPlaces: number; offers: PlaceInfo[] };
 
 export type PlaceInfo = {
+  id: number;
   title: string;
   price: number;
   imgSrc: string;
