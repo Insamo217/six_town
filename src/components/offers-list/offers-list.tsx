@@ -17,6 +17,7 @@ function OffersList({ offers }: appTypes): JSX.Element {
           premium={offer.premium}
           ratingStars={offer.ratingStars}
           bookmark={offer.bookmark}
+          town={offer.town}
         />
       ))}
     </>

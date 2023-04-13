@@ -9,6 +9,7 @@ export type PlaceInfo = {
   premium: boolean;
   ratingStars: string;
   bookmark: boolean;
+  town: string;
 };
 
 export enum RatingStars {

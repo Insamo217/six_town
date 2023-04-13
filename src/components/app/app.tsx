@@ -23,7 +23,7 @@ function App({ countPlaces, offers }: appTypes): JSX.Element {
             path="favorites"
             element={
               <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
-                <Favorites />
+                <Favorites countPlaces={countPlaces} offers={offers} />
               </PrivateRoute>
             }
           ></Route>

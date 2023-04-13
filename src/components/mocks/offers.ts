@@ -11,6 +11,7 @@ export const offers: PlaceInfo[] = [
     premium: true,
     ratingStars: RatingStars.Five,
     bookmark: false,
+    town: "Amsterdam",
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ export const offers: PlaceInfo[] = [
     premium: false,
     ratingStars: RatingStars.Four,
     bookmark: false,
+    town: "Amsterdam",
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ export const offers: PlaceInfo[] = [
     premium: true,
     ratingStars: RatingStars.Five,
     bookmark: true,
+    town: "Amsterdam",
   },
   {
     id: 4,
@@ -41,6 +44,7 @@ export const offers: PlaceInfo[] = [
     premium: false,
     ratingStars: RatingStars.Three,
     bookmark: true,
+    town: "Cologne",
   },
   {
     id: 5,
@@ -51,5 +55,6 @@ export const offers: PlaceInfo[] = [
     premium: false,
     ratingStars: RatingStars.Four,
     bookmark: false,
+    town: "Cologne",
   },
 ];
