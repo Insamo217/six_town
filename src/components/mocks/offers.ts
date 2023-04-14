@@ -10,7 +10,7 @@ export const offers: PlaceInfo[] = [
     typeRoom: "apartment",
     premium: true,
     ratingStars: RatingStars.Five,
-    bookmark: false,
+    bookmark: true,
     town: "Amsterdam",
   },
   {
@@ -43,7 +43,7 @@ export const offers: PlaceInfo[] = [
     typeRoom: "apartment",
     premium: false,
     ratingStars: RatingStars.Three,
-    bookmark: true,
+    bookmark: false,
     town: "Cologne",
   },
   {
@@ -56,5 +56,41 @@ export const offers: PlaceInfo[] = [
     ratingStars: RatingStars.Four,
     bookmark: false,
     town: "Cologne",
+  },
+
+  {
+    id: 6,
+    title: "Name №6",
+    price: 96,
+    imgSrc: "img/room.jpg",
+    typeRoom: "apartment",
+    premium: false,
+    ratingStars: RatingStars.Four,
+    bookmark: false,
+    town: "Cologne",
+  },
+
+  {
+    id: 7,
+    title: "Name №7",
+    price: 44,
+    imgSrc: "img/room.jpg",
+    typeRoom: "apartment",
+    premium: false,
+    ratingStars: RatingStars.Four,
+    bookmark: true,
+    town: "Cologne",
+  },
+
+  {
+    id: 8,
+    title: "Name №8",
+    price: 126,
+    imgSrc: "img/room.jpg",
+    typeRoom: "apartment",
+    premium: false,
+    ratingStars: RatingStars.Four,
+    bookmark: true,
+    town: "Dusseldorf",
   },
 ];
