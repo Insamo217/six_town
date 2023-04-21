@@ -1,16 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { appTypes } from "../../types/types";
+import { PlaceInfo } from "../../types/types";
 
 function Favorites({ offers }: appTypes): JSX.Element {
-  const towns = [
-    "Amsterdam",
-    "Paris",
-    "Brussels",
-    "Cologne",
-    "Hamburg",
-    "Dusseldorf",
-  ];
+  const groupedOffersByCity = offers.reduce<{ [key: string]: PlaceInfo[] }>(
+    (acc, curr) => {
+      if (curr.bookmark) {
+        const city = curr.town;
+
+        if (!(city in acc)) {
+          acc[city] = [];
+        }
+
+        acc[city].push(curr);
+      }
+
+      return acc;
+    },
+    {}
+  );
 
   return (
     <>
@@ -58,26 +67,18 @@ function Favorites({ offers }: appTypes): JSX.Element {
             <section className="favorites">
               <h1 className="favorites__title">Saved listing</h1>
               <ul className="favorites__list">
-                {towns.map((town, i) => (
-                  <li key={i + 1} className="favorites__locations-items">
+                {Object.entries(groupedOffersByCity).map(([city]) => (
+                  <li key={city} className="favorites__locations-items">
                     <div className="favorites__locations locations locations--current">
                       <div className="locations__item">
-                        {offers
-                          .filter((offer) => offer.town === town)
-                          .map((offer) => (
-                            <a
-                              key={1}
-                              className="locations__item-link"
-                              href="#"
-                            >
-                              <span>{town}</span>
-                            </a>
-                          ))}
+                        <a key={1} className="locations__item-link" href="#">
+                          <span>{city}</span>
+                        </a>
                       </div>
                     </div>
                     <div className="favorites__places">
                       {offers
-                        .filter((offer) => offer.town === town)
+                        .filter((offer) => offer.town === city)
                         .map(
                           (offer) =>
                             offer.bookmark && (
