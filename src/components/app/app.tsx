@@ -27,7 +27,10 @@ function App({ countPlaces, offers }: appTypes): JSX.Element {
               </PrivateRoute>
             }
           ></Route>
-          <Route path="offer/:id" element={<Property />}></Route>
+          <Route
+            path="offer/:id"
+            element={<Property countPlaces={countPlaces} offers={offers} />}
+          ></Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

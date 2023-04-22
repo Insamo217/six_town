@@ -1,5 +1,6 @@
 import React from "react";
 import { PlaceInfo } from "../../types/types";
+import { Link } from "react-router-dom";
 
 function PlaceCard({
   id,
@@ -20,7 +21,7 @@ function PlaceCard({
           </div>
         )}
         <div className="cities__image-wrapper place-card__image-wrapper">
-          <a href="#">
+          <Link to={"offer/" + id}>
             <img
               className="place-card__image"
               src={imgSrc}
@@ -28,7 +29,7 @@ function PlaceCard({
               height="200"
               alt="Place image"
             ></img>
-          </a>
+          </Link>
         </div>
         <div className="place-card__info">
           <div className="place-card__price-wrapper">

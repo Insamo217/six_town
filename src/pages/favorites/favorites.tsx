@@ -8,14 +8,11 @@ function Favorites({ offers }: appTypes): JSX.Element {
     (acc, curr) => {
       if (curr.bookmark) {
         const city = curr.town;
-
         if (!(city in acc)) {
           acc[city] = [];
         }
-
         acc[city].push(curr);
       }
-
       return acc;
     },
     {}
@@ -71,7 +68,7 @@ function Favorites({ offers }: appTypes): JSX.Element {
                   <li key={city} className="favorites__locations-items">
                     <div className="favorites__locations locations locations--current">
                       <div className="locations__item">
-                        <a key={1} className="locations__item-link" href="#">
+                        <a className="locations__item-link" href="#">
                           <span>{city}</span>
                         </a>
                       </div>

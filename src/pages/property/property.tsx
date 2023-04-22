@@ -1,6 +1,11 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import { appTypes } from "../../types/types";
 
-function Property(): JSX.Element {
+function Property({ offers }: appTypes): JSX.Element {
+  const params: any = useParams();
+  const offer = offers.find((offer) => offer.id == params.id);
+
   return (
     <>
       <div className="page">
@@ -43,7 +48,7 @@ function Property(): JSX.Element {
           </div>
         </header>
         <main className="page__main page__main--property">
-          <section className="property">
+          <section key={1} className="property">
             <div className="property__gallery-container container">
               <div className="property__gallery">
                 <div className="property__image-wrapper">
@@ -92,13 +97,14 @@ function Property(): JSX.Element {
             </div>
             <div className="property__container container">
               <div className="property__wrapper">
-                <div className="property__mark">
-                  <span>Premium</span>
-                </div>
+                {offer?.premium && (
+                  <div className="property__mark">
+                    <span>Premium</span>
+                  </div>
+                )}
+
                 <div className="property__name-wrapper">
-                  <h1 className="property__name">
-                    Beautiful &amp; luxurious studio at great location
-                  </h1>
+                  <h1 className="property__name">{offer?.title}</h1>
                   <button
                     className="property__bookmark-button button"
                     type="button"
@@ -115,7 +121,7 @@ function Property(): JSX.Element {
                 </div>
                 <div className="property__rating rating">
                   <div className="property__stars rating__stars">
-                    <span style={{ width: "80%" }} />
+                    <span style={{ width: offer?.ratingStars }} />
                     <span className="visually-hidden">Rating</span>
                   </div>
                   <span className="property__rating-value rating__value">
@@ -124,7 +130,7 @@ function Property(): JSX.Element {
                 </div>
                 <ul className="property__features">
                   <li className="property__feature property__feature--entire">
-                    Apartment
+                    {offer?.typeRoom}
                   </li>
                   <li className="property__feature property__feature--bedrooms">
                     3 Bedrooms
@@ -134,7 +140,7 @@ function Property(): JSX.Element {
                   </li>
                 </ul>
                 <div className="property__price">
-                  <b className="property__price-value">€120</b>
+                  <b className="property__price-value">€{offer?.price}</b>
                   <span className="property__price-text">&nbsp;night</span>
                 </div>
                 <div className="property__inside">
@@ -356,6 +362,7 @@ function Property(): JSX.Element {
             </div>
             <section className="property__map map" />
           </section>
+
           <div className="container">
             <section className="near-places places">
               <h2 className="near-places__title">
