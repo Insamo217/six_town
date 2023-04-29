@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { PlaceInfo } from "../../types/types";
 import { Link } from "react-router-dom";
 
@@ -12,9 +12,14 @@ function PlaceCard({
   ratingStars,
   bookmark,
 }: PlaceInfo): JSX.Element {
+  const [active, setActive] = useState(false);
   return (
     <>
-      <article className="cities__place-card place-card">
+      <article
+        onMouseEnter={() => setActive(active)}
+        onMouseLeave={() => setActive(false)}
+        className="cities__place-card place-card"
+      >
         {premium && (
           <div className="place-card__mark">
             <span>Premium</span>
